@@ -11,8 +11,8 @@ class _PodCoreVideoPlayer extends StatelessWidget {
     required this.videoAspectRatio,
     required this.tag,
     required this.overlay,
-  }) : super(key: key);
-
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +52,6 @@ class _PodCoreVideoPlayer extends StatelessWidget {
 
                     if (podCtr.podVideoState == PodVideoState.paused &&
                         podCtr.videoPosition == Duration.zero) {
-
                       return SizedBox.expand(
                         child: TweenAnimationBuilder<double>(
                           builder: (context, value, child) => Opacity(
@@ -141,15 +140,15 @@ class _PodCoreVideoPlayer extends StatelessWidget {
                                   !podCtr.alwaysShowProgressBar
                               ? const SizedBox()
                               : Padding(
-                                  padding: _podCtr.podProgressBarConfig.padding,
+                                  padding: podCtr.podProgressBarConfig.padding,
                                   child: Align(
                                     alignment: Alignment.bottomCenter,
                                     child: PodProgressBar(
                                       tag: tag,
                                       alignment: Alignment.bottomCenter,
-                                      podProgressBarConfig: podCtr.podProgressBarConfig,
+                                      podProgressBarConfig:
+                                          podCtr.podProgressBarConfig,
                                     ),
-
                                   ),
                                 ),
                         ),

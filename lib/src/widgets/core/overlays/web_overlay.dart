@@ -95,7 +95,7 @@ class _WebOverlayBottomControlles extends StatelessWidget {
                 tag: tag,
                 podProgressBarConfig: podCtr.podProgressBarConfig,
               ),
-
+            ),
             Row(
               children: [
                 Expanded(

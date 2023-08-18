@@ -40,21 +40,18 @@ class _MobileBottomSheet extends StatelessWidget {
           _bottomSheetTiles(
             title: podCtr.podPlayerLabels.loopVideo,
             icon: Icons.loop_rounded,
-            subText: _podCtr.isLooping ? _podCtr.podPlayerLabels.optionEnabled : _podCtr.podPlayerLabels.optionDisabled,
-            subText: podCtr.isLooping
-                ? podCtr.podPlayerLabels.optionEnabled
-                : podCtr.podPlayerLabels.optionDisabled,
+            subText: podCtr.isLooping ? podCtr.podPlayerLabels.optionEnabled : podCtr.podPlayerLabels.optionDisabled,
             onTap: () {
               Navigator.of(context).pop();
               podCtr.toggleLooping();
             },
           ),
 
-          if (_podCtr.showPlaybackSpeed)
+          if (podCtr.showPlaybackSpeed)
             _bottomSheetTiles(
-              title: _podCtr.podPlayerLabels.playbackSpeed,
+              title: podCtr.podPlayerLabels.playbackSpeed,
               icon: Icons.slow_motion_video_rounded,
-              subText: _podCtr.currentPaybackSpeed,
+              subText: podCtr.currentPaybackSpeed,
               onTap: () {
                 Navigator.of(context).pop();
                 Timer(const Duration(milliseconds: 100), () {
@@ -65,7 +62,7 @@ class _MobileBottomSheet extends StatelessWidget {
                       child: _VideoPlaybackSelectorMob(
                         tag: tag,
                         onTap: null,
-                      ),
+                      ),)
                   );
                 });
               },
