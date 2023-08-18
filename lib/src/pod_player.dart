@@ -62,8 +62,8 @@ class PodVideoPlayer extends StatefulWidget {
   final WidgetBuilder? onLoading;
 
   PodVideoPlayer({
-    Key? key,
     required this.controller,
+    super.key,
     this.frameAspectRatio = 16 / 9,
     this.videoAspectRatio = 16 / 9,
     this.alwaysShowProgressBar = true,
@@ -83,7 +83,7 @@ class PodVideoPlayer extends StatefulWidget {
     this.onLoading,
     this.shouldAllowSeeking,
     this.lastWatchDuration,
-  }) : super(key: key) {
+  }) {
     addToUiController();
   }
   static bool enableLogs = false;
