@@ -40,13 +40,14 @@ class _MobileBottomSheet extends StatelessWidget {
           _bottomSheetTiles(
             title: podCtr.podPlayerLabels.loopVideo,
             icon: Icons.loop_rounded,
-            subText: podCtr.isLooping ? podCtr.podPlayerLabels.optionEnabled : podCtr.podPlayerLabels.optionDisabled,
+            subText: podCtr.isLooping
+                ? podCtr.podPlayerLabels.optionEnabled
+                : podCtr.podPlayerLabels.optionDisabled,
             onTap: () {
               Navigator.of(context).pop();
               podCtr.toggleLooping();
             },
           ),
-
           if (podCtr.showPlaybackSpeed)
             _bottomSheetTiles(
               title: podCtr.podPlayerLabels.playbackSpeed,
@@ -62,7 +63,8 @@ class _MobileBottomSheet extends StatelessWidget {
                       child: _VideoPlaybackSelectorMob(
                         tag: tag,
                         onTap: null,
-                      ),)
+                      ),
+                    ),
                   );
                 });
               },
@@ -221,7 +223,7 @@ class _MobileOverlayBottomControlles extends StatelessWidget {
                 },
               ),
               const Spacer(),
-             MaterialIconButton(
+              MaterialIconButton(
                 toolTipMesg: podCtr.isFullScreen
                     ? podCtr.podPlayerLabels.exitFullScreen ??
                         'Exit full screen${kIsWeb ? ' (f)' : ''}'
