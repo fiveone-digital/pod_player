@@ -83,11 +83,9 @@ class PodVideoPlayer extends StatefulWidget {
     this.onLoading,
     this.shouldAllowSeeking,
     this.lastWatchDuration,
-  }) : super(key: key) {
-  }) {
+   }) {
     addToUiController();
   }
-
   static bool enableLogs = false;
   static bool enableGetxLogs = false;
 
